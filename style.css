@@ -1,3 +1,44 @@
+/* Écran de chargement avec fond noir */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;  /* Fond noir */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+#loader img {
+    width: 200px; /* Taille du logo (ajuste à ton goût) */
+    height: auto;
+    animation: moveLogo 1.5s ease-in-out infinite; /* Animation de mouvement du logo */
+}
+
+/* Animation pour faire bouger le logo */
+@keyframes moveLogo {
+    0% {
+        transform: translateY(-20px);  /* Déplacement initial vers le haut */
+    }
+    50% {
+        transform: translateY(20px);  /* Déplacement vers le bas */
+    }
+    100% {
+        transform: translateY(-20px);  /* Retour à la position initiale */
+    }
+}
+
+/* Contenu principal */
+#main-content {
+    display: block;
+}
+
+
 /* Style global */
 * {
     margin: 0;
