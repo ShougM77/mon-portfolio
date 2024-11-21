@@ -6,138 +6,127 @@
     <title>Portfolio - Développeur Web</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<div id="loader">
+    <img src="assets/images/logo-MG.jpg" alt="Logo">
+</div>
 <body>
-    <!-- Écran de chargement -->
-    <div id="loader">
-        <img src="assets/images/logo-MG.jpg" alt="Logo" id="logo">
-    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#frameworks">Frameworks</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Contenu principal -->
-    <div id="main-content" style="display: none;">
-        <!-- En-tête -->
-        <header>
-            <h1>Bienvenue sur mon portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#apropos">À propos</a></li>
-                    <li><a href="#frameworks">Frameworks</a></li>
-                    <li><a href="#projets">Projets</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+    <section id="accueil" class="section-accueil">
+        <div class="container">
+            <h1>Bonjour, je suis Morad GUICHE</h1>
+            <p>Développeur web passionné, déterminé à créer des sites modernes et performants, en offrant une expérience utilisateur optimale.</p>
+        </div>
+    </section>
 
-        <!-- Section Accueil -->
-        <section id="accueil" class="section-accueil">
-            <div class="background-image"></div>
-            <h1>Créateur de solutions modernes</h1>
-            <p>Développeur web passionné, créant des expériences numériques innovantes.</p>
-        </section>
+    <section id="apropos" class="section-a-propos">
+        <div class="container">
+            <h2>À propos</h2>
+            <p>Après 18 ans passés en tant que cadre administratif comptable, j'ai décidé de me reconvertir dans le domaine de l'informatique, un secteur qui m'a toujours passionné. Curieux et déterminé à apprendre, je me suis orienté vers le développement web. Cette reconversion me permet de mettre à profit ma rigueur, mon sens de l'organisation et ma volonté d'innover, des compétences que j'ai affinées tout au long de ma carrière précédente. Aujourd'hui, je me consacre pleinement à mon métier de développeur web, avec l'ambition de contribuer à des projets innovants et enrichissants.</p>
+        </div>
+    </section>
 
-        <!-- Section À propos -->
-        <section id="apropos" class="section-a-propos">
-            <div class="container">
-                <h2>À propos de moi</h2>
-                <p>
-                    Passionné par le développement web, je crée des solutions innovantes et adaptées aux besoins
-                    de mes clients. Avec une expertise dans différents langages et frameworks, je m'efforce de
-                    transformer vos idées en réalité.
-                </p>
-            </div>
-        </section>
-
-        <!-- Section Frameworks -->
-        <section id="frameworks" class="section-frameworks">
-            <h2>Frameworks et technologies</h2>
+    <section id="frameworks" class="section-frameworks">
+        <div class="container">
+            <h2>Frameworks et Outils</h2>
             <div class="frameworks">
                 <div class="framework">
-                    <img src="assets/images/html-logo.png" alt="HTML Logo">
-                    <p>HTML5</p>
-                </div>
-                <div class="framework">
-                    <img src="assets/images/css-logo.png" alt="CSS Logo">
-                    <p>CSS3</p>
-                </div>
-                <div class="framework">
-                    <img src="assets/images/javascript-logo.png" alt="JavaScript Logo">
-                    <p>JavaScript</p>
-                </div>
-                <div class="framework">
-                    <img src="assets/images/react-logo.png" alt="React Logo">
+                    <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React">
                     <p>React</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Section Projets -->
-        <section id="projets" class="section-projets">
-            <div class="container">
-                <h2>Projets récents</h2>
-                <div class="projets">
-                    <div class="projet">
-                        <img src="assets/images/projet1.jpg" alt="Projet 1">
-                        <h3>Projet 1</h3>
-                        <p>Création d'un site vitrine pour une entreprise locale.</p>
-                        <a href="#">Voir le projet</a>
-                    </div>
-                    <div class="projet">
-                        <img src="assets/images/projet2.jpg" alt="Projet 2">
-                        <h3>Projet 2</h3>
-                        <p>Développement d'une application web de gestion de tâches.</p>
-                        <a href="#">Voir le projet</a>
-                    </div>
-                    <div class="projet">
-                        <img src="assets/images/projet3.jpg" alt="Projet 3">
-                        <h3>Projet 3</h3>
-                        <p>Refonte complète d'un blog personnel avec React.</p>
-                        <a href="#">Voir le projet</a>
-                    </div>
-                    <div class="projet">
-                        <img src="assets/images/projet4.jpg" alt="Projet 4">
-                        <h3>Projet 4</h3>
-                        <p>Développement d'une plateforme e-commerce avec paiement en ligne.</p>
-                        <a href="#">Voir le projet</a>
-                    </div>
-                    <div class="projet">
-                        <img src="assets/images/projet5.jpg" alt="Projet 5">
-                        <h3>Projet 5</h3>
-                        <p>Création d'une application mobile pour le suivi sportif.</p>
-                        <a href="#">Voir le projet</a>
-                    </div>
-                    <div class="projet">
-                        <img src="assets/images/projet6.jpg" alt="Projet 6">
-                        <h3>Projet 6</h3>
-                        <p>Développement d'un système de gestion pour une entreprise.</p>
-                        <a href="#">Voir le projet</a>
-                    </div>
+                <div class="framework">
+                    <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js">
+                    <p>Node.js</p>
+                </div>
+                <div class="framework">
+                    <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB">
+                    <p>MongoDB</p>
+                </div>
+                <div class="framework">
+                    <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL">
+                    <p>MySQL</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Section Contact -->
-        <section id="contact" class="section-contact">
-            <div class="container">
-                <h2>Contactez-moi</h2>
-                <p>
-                    Vous avez un projet ou une idée ? N'hésitez pas à me contacter via les réseaux sociaux ou par email :
-                </p>
-                <ul>
-                    <li>Email : <a href="mailto:contact@monportfolio.com">contact@monportfolio.com</a></li>
-                    <li>Téléphone : 06 12 34 56 78</li>
-                    <li>
-                        <a href="https://linkedin.com/in/monprofil" target="_blank">LinkedIn</a> |
-                        <a href="https://github.com/monprofil" target="_blank">GitHub</a>
-                    </li>
-                </ul>
+    <section id="projets" class="section-projets">
+        <div class="container">
+            <h2>Mes Projets</h2>
+            <div class="projets">
+                <!-- Projet 1 -->
+                <div class="projet">
+                    <img src="assets/images/booki-HTML et CSS..png" alt="Intégration web">
+                    <h3>Intégration web avec HTML – CSS</h3>
+                    <p>Intégrer du contenu conformément à une maquette avec HTML et CSS. Implémentation d'une interface responsive avec HTML et CSS.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="projet">
+                    <img src="assets/images/qwenta-Planifiez le développement du site de votre client.png" alt="Gestion de projet">
+                    <h3>Gestion de projet et outils de développeurs</h3>
+                    <p>Suivi de projet avec un outil de gestion, rédaction de spécifications techniques, découpe de fonctionnalités en tâches, et mise en place d'une veille technologique.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="projet">
+                    <img src="assets/images/optimisation-debug.png" alt="Optimisation et Debug">
+                    <h3>Optimisation et Debug</h3>
+                    <p>Optimisation des performances d’un site web, débogage avec Chrome DevTools et rédaction d'un cahier de recette pour tester un site.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="projet">
+                    <img src="assets/images/archiwebos-une page web dynamique avec JavaScript.png" alt="Développement JavaScript">
+                    <h3>Développement web avec JavaScript</h3>
+                    <p>Manipulation des éléments du DOM et gestion des événements utilisateurs avec JavaScript. Récupération des données via des formulaires.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="projet">
+                    <img src="assets/images/kasa- une application web de location immobilière avec React.png" alt="React">
+                    <h3>React</h3>
+                    <p>Développement de composants React, gestion de la navigation entre les pages avec React Router, et initialisation d'une application avec Create React App.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="projet">
+                    <img src="assets/images/grimoire -Développez le back-end d'un site de notation de livres.png" alt="NodeJS">
+                    <h3>Développement back-end avec NodeJS</h3>
+                    <p>Implémentation d'un modèle logique de données, opérations CRUD sécurisées et stockage des données de manière sécurisée avec NodeJS.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+
+                
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Pied de page -->
-        <footer>
-            <p>&copy; 2024 - Mon Portfolio | Tous droits réservés</p>
-        </footer>
-    </div>
+    <section id="contact" class="section-contact">
+        <div class="container">
+            <h2>Contactez-moi</h2>
+            <p>Vous pouvez me contacter par email à <a href="mailto:guiche.morad@gmail.com">guiche.morad@gmail.com</a>.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 - Développeur Web</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

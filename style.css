@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #000; /* Fond noir */
+    background-color: #212529; /* Fond noir */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,6 +92,7 @@ nav ul li a {
     align-items: center;
     text-align: center;
     overflow: hidden;
+    background-color: #212529;
 }
 
 .section-accueil .background-image {
