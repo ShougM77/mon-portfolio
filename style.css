@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #000; /* Fond noir */
+    background-color: #212529;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,12 +15,11 @@
 }
 
 #loader img {
-    width: 200px; /* Taille du logo */
+    width: 200px;
     height: auto;
-    animation: moveLogo 1.5s ease-in-out infinite; /* Animation du logo */
+    animation: moveLogo 1.5s ease-in-out infinite;
 }
 
-/* Animation pour faire bouger le logo */
 @keyframes moveLogo {
     0% {
         transform: translateY(-20px);
@@ -31,11 +30,6 @@
     100% {
         transform: translateY(-20px);
     }
-}
-
-/* Contenu principal masqué au départ */
-#main-content {
-    display: block;
 }
 
 /* Style global */
@@ -56,7 +50,6 @@ body {
 .container {
     width: 90%;
     margin: 0 auto;
-    max-width: 1200px;
 }
 
 /* Header */
@@ -86,13 +79,12 @@ nav ul li a {
 .section-accueil {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     overflow: hidden;
-<<<<<<< Updated upstream
 }
 
 .section-accueil .background-image {
@@ -101,27 +93,10 @@ nav ul li a {
     left: 0;
     width: 200%; /* Plus grand pour l'effet de mouvement */
     height: 200%;
-    background-image: url('assets/image.jpg'); /* Image de fond */
-=======
     background-image: url('./images/back.gif');
->>>>>>> Stashed changes
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-    animation: moveBackground 15s linear infinite;
-    z-index: -1;
-}
-
-@keyframes moveBackground {
-    0% {
-        transform: translate(-25%, -25%);
-    }
-    50% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(-25%, -25%);
-    }
+    background-repeat: no-repeat;
 }
 
 .section-accueil h1 {
@@ -139,43 +114,49 @@ nav ul li a {
 
 /* Section À propos */
 .section-a-propos {
-    padding: 60px 0;
+    padding: 22vh;
     background-color: #f4f4f4;
     text-align: center;
+    height: 80vh;
 }
 
 .section-a-propos h2 {
-    margin-bottom: 20px;
-    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-size: 3rem;
 }
 
 .section-a-propos p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #666;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 /* Section Frameworks */
 .section-frameworks {
-    padding: 60px 0;
+    padding: 100px 0;
     background-color: #fff;
     text-align: center;
+    height: 700px;
 }
 
 .frameworks {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
+    width: 100%;
 }
 
 .framework {
     text-align: center;
-    width: 100px;
+    width: 150px;
+    max-width: 200px;
 }
 
 .framework img {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: auto;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -185,13 +166,22 @@ nav ul li a {
 
 .framework p {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+.section-frameworks h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 90px;
+    color: #333;
+    text-transform: uppercase;
 }
 
 /* Section Projets */
 .section-projets {
     padding: 60px 0;
     background-color: #ecf0f1;
+    width: 100%;
 }
 
 .projets {
@@ -199,6 +189,8 @@ nav ul li a {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .projet {
@@ -279,7 +271,7 @@ nav ul li a {
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 21px;
     background-color: #333;
     color: white;
 }
