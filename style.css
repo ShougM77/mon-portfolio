@@ -92,6 +92,7 @@ nav ul li a {
     align-items: center;
     text-align: center;
     overflow: hidden;
+<<<<<<< Updated upstream
 }
 
 .section-accueil .background-image {
@@ -101,6 +102,9 @@ nav ul li a {
     width: 200%; /* Plus grand pour l'effet de mouvement */
     height: 200%;
     background-image: url('assets/image.jpg'); /* Image de fond */
+=======
+    background-image: url('./images/back.gif');
+>>>>>>> Stashed changes
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
