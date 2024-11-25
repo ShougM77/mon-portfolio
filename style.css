@@ -85,16 +85,7 @@ nav ul li a {
     align-items: center;
     text-align: center;
     overflow: hidden;
-    background-image: url('./images/back.gif');
-}
-
-.section-accueil .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%; /* Plus grand pour l'effet de mouvement */
-    height: 200%;
-  
+    background-image: url('/images/back.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -103,7 +94,7 @@ nav ul li a {
 .section-accueil h1 {
     font-size: 4rem;
     margin-bottom: 20px;
-    color: white;
+    color: white; 
 }
 
 .section-accueil p {
