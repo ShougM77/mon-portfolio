@@ -85,7 +85,7 @@ nav ul li a {
     align-items: center;
     text-align: center;
     overflow: hidden;
-    background-image: url('/images/back.gif');
+    background-image: url('/assets/images/back.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
