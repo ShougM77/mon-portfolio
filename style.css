@@ -106,10 +106,9 @@ nav ul li a {
 
 /* Section À propos */
 .section-a-propos {
-    padding: 22vh;
+    padding: 10%;
     background-color: #f4f4f4;
     text-align: center;
-    height: 80vh;
 }
 
 .section-a-propos h2 {
