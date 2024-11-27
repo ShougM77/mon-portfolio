@@ -10,3 +10,11 @@ window.onload = function () {
         }, 1000);
     }, 2000);
 };
+// Script pour basculer l'affichage du menu
+const menuIcon = document.getElementById('menu-icon');
+const menu = document.getElementById('menu');
+
+// Ajoute un écouteur d'événements pour le bouton burger
+menuIcon.addEventListener('click', () => {
+    menu.classList.toggle('active'); // Bascule la classe active pour afficher/masquer le menu
+});
