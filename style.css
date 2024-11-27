@@ -184,10 +184,18 @@ nav ul li a {
     font-weight: bold;
     margin-bottom: 90px;
     color: #333;
-    text-transform: uppercase;
 }
 
 /* Section Projets */
+
+.section-projets h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 90px;
+    color: #333;
+    align-content: baseline;
+    text-align: center;
+}
 .section-projets {
     padding: 60px 0;
     background-color: #ecf0f1;
@@ -340,3 +348,11 @@ footer {
     nav ul {
         padding-top: 0; /* Enlever padding du nav principal pour éviter conflit avec le menu burger */
     }
+    .section-frameworks h2 {
+        font-size:large;
+    }
+    .section-frameworks {
+        padding: 100px 0 50px;
+    }
+
+   
