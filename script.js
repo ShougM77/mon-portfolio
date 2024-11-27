@@ -1,20 +1,33 @@
+// Écran de chargement avec fondu
 window.onload = function () {
+    // Afficher le loader pendant 2 secondes
     setTimeout(function () {
         const loader = document.getElementById('loader');
-        loader.style.opacity = '0';
-        loader.style.transition = 'opacity 1s ease-out';
+        loader.style.opacity = '0'; // Fade out du loader
+        loader.style.transition = 'opacity 1s ease-out'; // Transition en douceur pour l'opacité
 
+        // Après 1 seconde (le temps de la transition), masquer le loader et afficher le contenu principal
         setTimeout(function () {
-            loader.style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
+            loader.style.display = 'none'; // Masquer le loader
+            document.getElementById('main-content').style.display = 'block'; // Afficher le contenu principal
         }, 1000);
-    }, 2000);
+    }, 2000); // Le loader est visible pendant 2 secondes avant de commencer à disparaître
 };
-// Script pour basculer l'affichage du menu
-const menuIcon = document.getElementById('menu-icon');
-const menu = document.getElementById('menu');
 
-// Ajoute un écouteur d'événements pour le bouton burger
-menuIcon.addEventListener('click', () => {
-    menu.classList.toggle('active'); // Bascule la classe active pour afficher/masquer le menu
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerIcon = document.querySelector('.menu-icon');
+    const menu = document.getElementById('menu');
+    const menuItems = document.querySelectorAll('#menu li a');
+
+    // Toggle du menu lorsqu'on clique sur le bouton burger
+    burgerIcon.addEventListener('click', function () {
+        menu.classList.toggle('active');
+    });
+
+    // Fermer le menu lorsqu'un élément du menu est cliqué
+    menuItems.forEach(item => {
+        item.addEventListener('click', function () {
+            menu.classList.remove('active');
+        });
+    });
 });

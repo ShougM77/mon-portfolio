@@ -312,24 +312,31 @@ footer {
         display: flex;
     }
 
-    nav ul {
-        display: none; /* Cacher le menu par défaut */
-        width: 100%;
+    #menu {
+        display: none; /* Masquer le menu */
         flex-direction: column;
         align-items: center;
-        position: absolute;
-        top: 50px;
+        position: fixed; /* Positionner le menu par-dessus */
         left: 0;
         background-color: #333;
+        z-index: 9998; /* Assurer que le menu soit devant les autres éléments */
     }
 
-    nav ul.active {
-        display: flex; /* Afficher le menu lorsqu'il est activé */
+    #menu.active {
+        display: flex; /* Afficher le menu quand il est activé */
     }
 
-    nav ul li {
+    #menu li {
         width: 100%;
         text-align: center;
         padding: 10px;
     }
-}
+
+    #menu li a {
+        font-size: 16px; /* Texte plus petit */
+        padding: 10px;
+    }
+
+    nav ul {
+        padding-top: 0; /* Enlever padding du nav principal pour éviter conflit avec le menu burger */
+    }
