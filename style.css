@@ -67,6 +67,9 @@ nav ul {
     margin: 0;
     padding: 0;
 }
+nav ul :hover{
+    color: #3498db;
+}
 
 nav ul li {
     margin: 0 15px;
@@ -196,59 +199,103 @@ nav ul li a {
     align-content: baseline;
     text-align: center;
 }
+/* Section des projets */
 .section-projets {
     padding: 60px 0;
     background-color: #ecf0f1;
-    width: 100%;
+    text-align: center;
 }
 
 .projets {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
-    box-sizing: border-box;
+    display: grid; /* Utilisation d'une grille */
+    grid-template-columns: repeat(3, 1fr); /* Deux colonnes */
+    gap: 20px; /* Espace entre les cartes */
 }
-
 .projet {
-    background-color: white;
-    padding: 20px;
-    width: 30%;
-    margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.projet:hover {
-    transform: scale(1.05);
-}
-
-.projet img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4.5rem;
     width: 100%;
-    height: auto;
-    margin-bottom: 15px;
+    padding: 45px;
+    border-radius: 25px;
+    background-color: #f6f6f6;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    perspective: 1000px; /* Nécessaire pour l'effet de flip */
 }
 
-.projet h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+/* Structure de la carte de projet */
+.project-inner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Hauteur fixe */
+    transform-style: preserve-3d; /* Permet l'effet de rotation en 3D */
+    transition: transform 0.6s; /* Durée de la transition */
 }
 
-.projet p {
-    margin-bottom: 15px;
-    color: #666;
+/* Cacher la carte quand elle n'est pas retournée */
+.project-inner.is-flipped {
+    transform: rotateY(180deg); /* Retourner la carte au clic */
 }
 
-.projet a {
-    display: inline-block;
+/* Face avant : Image et titre */
+.project-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Cache la face arrière quand on tourne la carte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.project-front img {
+    width: 100%;
+    height: 325px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project-front h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Face arrière : Informations et lien */
+.project-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Cache la face avant pendant le flip */
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    transform: rotateY(180deg); /* Cacher la face arrière au départ */
+}
+
+.project-back p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.project-back a {
     color: #3498db;
     text-decoration: none;
     font-weight: bold;
 }
 
-.projet a:hover {
+.project-back a:hover {
     text-decoration: underline;
 }
 
@@ -353,6 +400,14 @@ footer {
     }
     .section-frameworks {
         padding: 100px 0 50px;
+    }
+    .projets {
+        display: block;
+    
+    }
+    .framework img {
+        width: 60%;
+    
     }
 
    

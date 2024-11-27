@@ -31,3 +31,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+// Récupérer tous les projets
+const projets = document.querySelectorAll('.projet');
+
+// Ajouter un événement au clic sur chaque projet
+projets.forEach((projet) => {
+    projet.addEventListener('click', () => {
+        // On ajoute ou enlève la classe 'is-flipped' à l'élément 'project-inner' du projet
+        const projectInner = projet.querySelector('.project-inner');
+        projectInner.classList.toggle('is-flipped');
+    });
+});
+
