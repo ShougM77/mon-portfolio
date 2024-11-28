@@ -207,9 +207,9 @@ nav ul li a {
 }
 
 .projets {
-    display: grid; /* Utilisation d'une grille */
-    grid-template-columns: repeat(3, 1fr); /* Deux colonnes */
-    gap: 20px; /* Espace entre les cartes */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 .projet {
     display: flex;
@@ -224,7 +224,7 @@ nav ul li a {
     margin: auto;
     margin-top: 40px;
     margin-bottom: 40px;
-    perspective: 1000px; /* Nécessaire pour l'effet de flip */
+    perspective: 1000px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -232,14 +232,14 @@ nav ul li a {
 .project-inner {
     position: relative;
     width: 100%;
-    height: 300px; /* Hauteur fixe */
-    transform-style: preserve-3d; /* Permet l'effet de rotation en 3D */
-    transition: transform 0.6s; /* Durée de la transition */
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
 }
 
 /* Cacher la carte quand elle n'est pas retournée */
 .project-inner.is-flipped {
-    transform: rotateY(180deg); /* Retourner la carte au clic */
+    transform: rotateY(180deg);
 }
 
 /* Face avant : Image et titre */
@@ -247,7 +247,7 @@ nav ul li a {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Cache la face arrière quand on tourne la carte */
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -260,10 +260,10 @@ nav ul li a {
     height: 325px;
     object-fit: cover;
     border-radius: 8px;
-    transition: transform 0.3s ease-in-out; /* Ajout d'un hover */
+    transition: transform 0.3s ease-in-out;
 }
 .project-front img:hover {
-    transform: scale(1.05); /* Zoom léger au survol */
+    transform: scale(1.05);
 }
 .project-front h3 {
     margin-top: 10px;
@@ -277,7 +277,7 @@ nav ul li a {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Cache la face avant pendant le flip */
+    backface-visibility: hidden;
     background-color: #fff;
     color: #333;
     display: flex;
@@ -286,10 +286,10 @@ nav ul li a {
     flex-direction: column;
     padding: 20px;
     text-align: center;
-    transform: rotateY(180deg); /* Cacher la face arrière au départ */
+    transform: rotateY(180deg);
 }
 .projet:hover {
-    transform: translateY(-10px); /* Animation au survol */
+    transform: translateY(-10px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 .project-back p {
@@ -376,17 +376,17 @@ footer {
     }
 
     #menu {
-        display: none; /* Masquer le menu */
+        display: none;
         flex-direction: column;
         align-items: center;
-        position: fixed; /* Positionner le menu par-dessus */
+        position: fixed;
         left: 0;
         background-color: #333;
-        z-index: 9998; /* Assurer que le menu soit devant les autres éléments */
+        z-index: 9998;
     }
 
     #menu.active {
-        display: flex; /* Afficher le menu quand il est activé */
+        display: flex;
     }
 
     #menu li {
@@ -396,12 +396,12 @@ footer {
     }
 
     #menu li a {
-        font-size: 16px; /* Texte plus petit */
+        font-size: 16px;
         padding: 10px;
     }
 
     nav ul {
-        padding-top: 0; /* Enlever padding du nav principal pour éviter conflit avec le menu burger */
+        padding-top: 0;
     }
     .section-frameworks h2 {
         font-size:large;
