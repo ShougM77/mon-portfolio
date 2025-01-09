@@ -1,40 +1,27 @@
-// Écran de chargement avec fondu
+// Loader
 window.onload = function () {
-    // Afficher le loader pendant 2 secondes
     setTimeout(function () {
         const loader = document.getElementById('loader');
-        loader.style.opacity = '0'; // Fade out du loader
-        loader.style.transition = 'opacity 1s ease-out'; // Transition en douceur pour l'opacité
-
-        // Après 1 seconde (le temps de la transition), masquer le loader et afficher le contenu principal
+        loader.style.opacity = '0';
+        loader.style.transition = 'opacity 1s ease-out';
         setTimeout(function () {
-            loader.style.display = 'none'; // Masquer le loader
-            document.getElementById('main-content').style.display = 'block'; // Afficher le contenu principal
+            loader.style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
         }, 1000);
-    }, 2000); // Le loader est visible pendant 2 secondes avant de commencer à disparaître
+    }, 2000);
 };
 
+// Menu Burger
 document.addEventListener('DOMContentLoaded', function () {
     const burgerIcon = document.querySelector('.menu-icon');
     const menu = document.getElementById('menu');
-    const menuItems = document.querySelectorAll('#menu li a');
-
-    // Toggle du menu lorsqu'on clique sur le bouton burger
     burgerIcon.addEventListener('click', function () {
         menu.classList.toggle('active');
     });
-
-    // Fermer le menu lorsqu'un élément du menu est cliqué
-    menuItems.forEach(item => {
-        item.addEventListener('click', function () {
-            menu.classList.remove('active');
-        });
-    });
 });
-// Récupérer tous les projets
-const projets = document.querySelectorAll('.projet');
 
-// Ajouter un événement au clic sur chaque projet
+// Flip Projects
+const projets = document.querySelectorAll('.projet');
 projets.forEach((projet) => {
     projet.addEventListener('click', () => {
         const projectInner = projet.querySelector('.project-inner');
@@ -42,3 +29,39 @@ projets.forEach((projet) => {
     });
 });
 
+// Background Animation
+function setupCanvas() {
+    const canvas = document.getElementById('background');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const lines = [];
+    for (let i = 0; i < 100; i++) {
+        lines.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            angle: Math.random() * Math.PI * 2,
+            length: Math.random() * 50 + 50,
+            speed: Math.random() * 0.5 + 0.5,
+        });
+    }
+
+    function drawLines() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = 'white';
+        lines.forEach((line) => {
+            line.x += Math.cos(line.angle) * line.speed;
+            line.y += Math.sin(line.angle) * line.speed;
+            ctx.beginPath();
+            ctx.moveTo(line.x, line.y);
+            ctx.lineTo(line.x + Math.cos(line.angle) * line.length, line.y + Math.sin(line.angle) * line.length);
+            ctx.stroke();
+        });
+        requestAnimationFrame(drawLines);
+    }
+    drawLines();
+}
+setupCanvas();
