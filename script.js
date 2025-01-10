@@ -1,67 +1,115 @@
-// Loader
+// Écran de chargement avec fondu
 window.onload = function () {
-    setTimeout(function () {
-        const loader = document.getElementById('loader');
-        loader.style.opacity = '0';
-        loader.style.transition = 'opacity 1s ease-out';
+    const loader = document.getElementById('loader');
+    const mainContent = document.getElementById('accueil'); // ID à afficher après le loader
+
+    if (loader && mainContent) {
+        // Afficher le loader pendant 2 secondes
         setTimeout(function () {
-            loader.style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-        }, 1000);
-    }, 2000);
+            loader.style.opacity = '0'; // Fade out du loader
+            loader.style.transition = 'opacity 1s ease-out'; // Transition en douceur pour l'opacité
+
+            // Après 1 seconde (le temps de la transition), masquer le loader
+            setTimeout(function () {
+                loader.style.display = 'none'; // Masquer le loader
+                mainContent.style.display = 'block'; // Afficher le contenu principal
+            }, 1000);
+        }, 2000); // Le loader est visible pendant 2 secondes avant de commencer à disparaître
+    } else {
+        console.error("L'élément avec l'ID 'loader' ou 'accueil' est introuvable.");
+    }
 };
 
-// Menu Burger
+// Initialisation de Particles.js
 document.addEventListener('DOMContentLoaded', function () {
-    const burgerIcon = document.querySelector('.menu-icon');
-    const menu = document.getElementById('menu');
-    burgerIcon.addEventListener('click', function () {
-        menu.classList.toggle('active');
-    });
-});
+    const particlesContainer = document.getElementById('particles-js');
 
-// Flip Projects
-const projets = document.querySelectorAll('.projet');
-projets.forEach((projet) => {
-    projet.addEventListener('click', () => {
-        const projectInner = projet.querySelector('.project-inner');
-        projectInner.classList.toggle('is-flipped');
-    });
-});
-
-// Background Animation
-function setupCanvas() {
-    const canvas = document.getElementById('background');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const lines = [];
-    for (let i = 0; i < 100; i++) {
-        lines.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            angle: Math.random() * Math.PI * 2,
-            length: Math.random() * 50 + 50,
-            speed: Math.random() * 0.5 + 0.5,
+    if (particlesContainer) {
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                },
+                "modes": {
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
         });
+    } else {
+        console.error("Le conteneur 'particles-js' est introuvable.");
     }
-
-    function drawLines() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = 'black';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.strokeStyle = 'white';
-        lines.forEach((line) => {
-            line.x += Math.cos(line.angle) * line.speed;
-            line.y += Math.sin(line.angle) * line.speed;
-            ctx.beginPath();
-            ctx.moveTo(line.x, line.y);
-            ctx.lineTo(line.x + Math.cos(line.angle) * line.length, line.y + Math.sin(line.angle) * line.length);
-            ctx.stroke();
-        });
-        requestAnimationFrame(drawLines);
-    }
-    drawLines();
-}
-setupCanvas();
+});
