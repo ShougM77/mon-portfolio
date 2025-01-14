@@ -109,7 +109,6 @@ nav ul li:hover a {
     align-items: center;
     text-align: center;
     overflow: hidden;
-    background-color: #000; /* Fond noir */
 }
 
 /* Conteneur pour Particles.js */
