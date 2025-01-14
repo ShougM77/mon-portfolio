@@ -20,6 +20,35 @@ window.onload = function () {
     }
 };
 
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerIcon = document.querySelector('.menu-icon');
+    const menu = document.getElementById('menu');
+    const menuItems = document.querySelectorAll('#menu li a');
+
+    // Toggle du menu lorsqu'on clique sur le bouton burger
+    burgerIcon.addEventListener('click', function () {
+        menu.classList.toggle('active');
+    });
+
+    // Fermer le menu lorsqu'un élément du menu est cliqué
+    menuItems.forEach(item => {
+        item.addEventListener('click', function () {
+            menu.classList.remove('active');
+        });
+    });
+});
+// Récupérer tous les projets
+const projets = document.querySelectorAll('.projet');
+
+// Ajouter un événement au clic sur chaque projet
+projets.forEach((projet) => {
+    projet.addEventListener('click', () => {
+        // On ajoute ou enlève la classe 'is-flipped' à l'élément 'project-inner' du projet
+        const projectInner = projet.querySelector('.project-inner');
+        projectInner.classList.toggle('is-flipped');
+    });
+});
+
 // Initialisation de Particles.js
 document.addEventListener('DOMContentLoaded', function () {
     const particlesContainer = document.getElementById('particles-js');

@@ -45,7 +45,11 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
-
+.container-accueil{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 400px;
+}
 /* Container principal */
 .container {
     width: 90%;
@@ -67,6 +71,9 @@ nav ul {
     margin: 0;
     padding: 0;
 }
+nav ul :hover{
+    color: #3498db;
+}
 
 nav ul li {
     margin: 0 15px;
@@ -77,11 +84,6 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
 }
-
-nav ul li:hover a {
-    color: #3498db;
-}
-
 /* Styles pour le bouton burger */
 .menu-icon {
     display: none;
@@ -99,19 +101,20 @@ nav ul li:hover a {
     border-radius: 3px;
 }
 
-/* Section accueil */
+/* Section Accueil */
 .section-accueil {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
-/* Conteneur pour Particles.js */
 #particles-js {
     position: absolute;
     top: 0;
@@ -121,11 +124,10 @@ nav ul li:hover a {
     z-index: -1; /* Derrière le contenu */
     background-color: #000; /* Fond sombre */
 }
-
 .section-accueil h1 {
     font-size: 4rem;
-    color: white;
     margin-bottom: 20px;
+    color: white; 
 }
 
 .section-accueil p {
@@ -159,7 +161,7 @@ nav ul li:hover a {
     padding: 100px 0;
     background-color: #fff;
     text-align: center;
-    height: auto;
+    height: 700px;
 }
 
 .frameworks {
@@ -194,16 +196,11 @@ nav ul li:hover a {
 .section-frameworks h2 {
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 90px;
     color: #333;
 }
 
 /* Section Projets */
-.section-projets {
-    padding: 60px 0;
-    background-color: #ecf0f1;
-    text-align: center;
-}
 
 .section-projets h2 {
     font-size: 3rem;
@@ -213,13 +210,18 @@ nav ul li:hover a {
     align-content: baseline;
     text-align: center;
 }
+/* Section des projets */
+.section-projets {
+    padding: 60px 0;
+    background-color: #ecf0f1;
+    text-align: center;
+}
 
 .projets {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
-
 .projet {
     display: flex;
     justify-content: center;
@@ -237,11 +239,7 @@ nav ul li:hover a {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.projet:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
+/* Structure de la carte de projet */
 .project-inner {
     position: relative;
     width: 100%;
@@ -250,6 +248,7 @@ nav ul li:hover a {
     transition: transform 0.6s;
 }
 
+/* Cacher la carte quand elle n'est pas retournée */
 .project-inner.is-flipped {
     transform: rotateY(180deg);
 }
@@ -274,3 +273,165 @@ nav ul li:hover a {
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
 }
+.project-front img:hover {
+    transform: scale(1.05);
+}
+.project-front h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    font-size: 15px;
+}
+
+/* Face arrière : Informations et lien */
+.project-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+.projet:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.project-back p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.project-back a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-back a:hover {
+    text-decoration: underline;
+}
+
+/* Section Contact */
+.section-contact {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.section-contact h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.section-contact p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.section-contact ul {
+    list-style: none;
+}
+
+.section-contact ul li {
+    margin: 10px 0;
+}
+
+.section-contact a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.section-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 21px;
+    background-color: #333;
+    color: white;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .projets {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projet {
+        width: 100%;
+    }
+
+    .section-accueil h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-accueil p {
+        font-size: 1rem;
+    }
+    .menu-icon {
+        display: flex;
+    }
+
+    #menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        background-color: #333;
+        z-index: 9998;
+    }
+
+    #menu.active {
+        display: flex;
+    }
+
+    #menu li {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    #menu li a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    nav ul {
+        padding-top: 0;
+    }
+    .section-frameworks h2 {
+        font-size:large;
+    }
+    .section-frameworks {
+        padding: 100px 0 50px;
+    }
+    .projets {
+        display: block;
+    
+    }
+    .framework img {
+        width: 60%;
+    
+    }
+    .container-accueil{
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 50%;
+    }
+
+   
