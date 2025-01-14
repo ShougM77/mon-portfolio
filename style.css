@@ -48,6 +48,7 @@ body {
 .container-accueil{
     width: 90%;
     margin: 0 auto;
+    padding-top: 15%;
 }
 /* Container principal */
 .container {
